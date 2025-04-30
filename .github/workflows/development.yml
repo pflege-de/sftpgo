@@ -12,6 +12,7 @@ permissions:
 jobs:
   test-deploy:
     name: Test and deploy
+    if: github.repository == 'drakkan/sftpgo'
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -100,6 +101,7 @@ jobs:
 
   test-deploy-windows:
     name: Test and deploy Windows
+    if: github.repository == 'drakkan/sftpgo'
     environment: signing
     runs-on: windows-latest
 

@@ -13,6 +13,7 @@ env:
 
 jobs:
   prepare-sources-with-deps:
+    if: github.repository == 'drakkan/sftpgo'
     name: Prepare sources with deps
     runs-on: ubuntu-latest
     steps:
@@ -43,6 +44,7 @@ jobs:
           retention-days: 1
 
   prepare-windows:
+    if: github.repository == 'drakkan/sftpgo'
     name: Prepare Windows binaries
     environment: signing
     runs-on: windows-2022
@@ -226,6 +228,7 @@ jobs:
           retention-days: 1
 
   prepare-mac:
+    if: github.repository == 'drakkan/sftpgo'
     name: Prepare macOS binaries
     runs-on: macos-13
 
@@ -295,6 +298,7 @@ jobs:
           retention-days: 1
 
   prepare-linux:
+    if: github.repository == 'drakkan/sftpgo'
     name: Prepare Linux binaries
     runs-on: ubuntu-latest
     strategy:
@@ -460,6 +464,7 @@ jobs:
           retention-days: 1
 
   prepare-linux-bundle:
+    if: github.repository == 'drakkan/sftpgo'
     name: Prepare Linux bundle
     needs: prepare-linux
     runs-on: ubuntu-latest
@@ -517,6 +522,7 @@ jobs:
           retention-days: 1
 
   create-release:
+    if: github.repository == 'drakkan/sftpgo'
     name: Release
     needs: [prepare-linux-bundle, prepare-sources-with-deps, prepare-mac, prepare-windows]
     runs-on: ubuntu-latest
